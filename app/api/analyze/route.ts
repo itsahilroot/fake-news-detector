@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from 'next/server';
-import { AnalysisResult } from '@/types/analysis';
+import { AnalysisResult, DetectedIssue } from '@/types/analysis';
 
 // In a real implementation, we would use the Google Vertex AI API client
 // and authenticate using the Google Auth Library
