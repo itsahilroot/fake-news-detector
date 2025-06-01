@@ -39,19 +39,6 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
     }
   };
 
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
-      case 'low':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-300';
-      case 'medium':
-        return 'bg-orange-100 text-orange-800 border-orange-300';
-      case 'high':
-        return 'bg-red-100 text-red-800 border-red-300';
-      default:
-        return 'bg-gray-100 text-gray-800 border-gray-300';
-    }
-  };
-
   return (
     <div className="w-full max-w-4xl mx-auto mt-8 animate-in fade-in-50 duration-500">
       <Card>
@@ -74,8 +61,7 @@ export default function ResultsDisplay({ results }: ResultsDisplayProps) {
             </div>
             <Progress 
               value={results.credibilityScore} 
-              className="h-3" 
-              indicatorClassName={getScoreColor(results.credibilityScore)} 
+              className={`h-3 ${getScoreColor(results.credibilityScore)}`}
             />
           </div>
 
